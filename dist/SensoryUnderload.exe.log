@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "SensoryUnderload.py", line 129, in <module>
+  File "SensoryUnderload.py", line 125, in main
+  File "SensoryUnderload.py", line 115, in get_input
+  File "SensoryUnderload.py", line 95, in handle_input
+  File "SensoryUnderload.py", line 77, in is_answer
+  File "SensoryUnderload.py", line 43, in play_track
+pygame.error: Couldn't read from 'SensoryUnderload/InBFlat20.wav'
+Traceback (most recent call last):
+  File "SensoryUnderload.py", line 129, in <module>
+  File "SensoryUnderload.py", line 125, in main
+  File "SensoryUnderload.py", line 115, in get_input
+  File "SensoryUnderload.py", line 95, in handle_input
+  File "SensoryUnderload.py", line 77, in is_answer
+  File "SensoryUnderload.py", line 43, in play_track
+pygame.error: Couldn't read from 'SensoryUnderload/InBFlat20.ogg'
