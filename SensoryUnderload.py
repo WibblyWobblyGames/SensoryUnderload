@@ -13,14 +13,10 @@ def generate_possible_answers():
   global answers
   global all_possible_answers
   global nouns
-  #print "I AM FO SHO GIVING POSSIBLE ANSWERS"
   plural = "s"
   plural_list = [s + plural for s in answers]
-  #print plural_list
   noun_combo = [noun + answer for noun in nouns for answer in answers]
-  #print noun_combo
   all_possible_answers =  answers + noun_combo + plural_list
-  #print all_possible_answers
 
 def get_key():
   while 1:
@@ -35,7 +31,6 @@ def play_track(trackNumber):
   global tracksPlaying
   filename = "SensoryUnderload/InBFlat" + trackNumber + ".ogg"
   abspath = os.path.abspath(filename)
-  #print "I am your file name, yo " + filename
   sound = pygame.mixer.Sound(abspath)
   tracksPlaying.append(trackNumber)
   if trackNumber == "20":
@@ -50,10 +45,7 @@ def add_music():
   randomTrackNumber = random.randint(1,19)
   while randomTrackNumber in tracksPlaying:
     randomTrackNumber = random.randint(1,19)
-  #print str(randomTrackNumber) + " this is the track number."
   play_track(str(randomTrackNumber))
-  #print tracksPlaying
-  #print currentSounds
 
 def end_music():
   global tracksPlaying
@@ -65,14 +57,10 @@ def end_music():
 
 def is_answer(answer):
   matches = 0
-  #print answer + " ANSWER IS HERE."
   continueString = 1
   for word in all_possible_answers:
-    #print(word + " AM YOUR WORD " , answer)
-    #print word is answer
     if word == answer:
       matches = 1
-      #print "FOUND BITCH"
       end_music()
       play_track(str(20))
     elif word.startswith(answer):
@@ -106,7 +94,6 @@ def get_input():
       return 1
     if len(tracksPlaying) == 1 and tracksPlaying[0] == "20":
       if not pygame.mixer.music.get_busy():
-        #print "done"
         current_string = []
         end_music()
         current_string = handle_input(inkey,current_string)
@@ -115,9 +102,7 @@ def get_input():
         current_string = handle_input(inkey,current_string)
 
 def main():
-    #print "start"
     pygame.init()
-    #pygame.mixer.init()
     size = width, height = 320, 240
     screen = pygame.display.set_mode(size)
     pygame.display.set_caption('What Will You Leave Behind?')
